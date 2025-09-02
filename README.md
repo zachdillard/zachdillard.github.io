@@ -151,6 +151,52 @@ Your website is pre-configured to use [a very flexible CSS framework called "Pri
 
 You are, of course, welcome to remove it or replace it with another framework. Just bear in mind that the HTML that your website came pre-packaged with references multiple Primer "utility classes" to define things like column widths, margins, and background colors.
 
+## Testing
+
+This project includes a comprehensive test suite to validate the Jekyll site configuration, templates, and structure. The tests ensure that:
+
+- Configuration files are valid and properly structured
+- Liquid templates have correct syntax
+- SCSS files can be processed without errors
+- Required files and directories exist
+- Site structure follows Jekyll conventions
+
+### Running Tests
+
+To run all tests:
+
+```bash
+rake test
+```
+
+To run specific test suites:
+
+```bash
+rake test:config      # Test configuration files
+rake test:templates   # Test Liquid templates
+rake test:scss        # Test SCSS compilation
+rake test:structure   # Test site structure
+```
+
+You can also run individual test files directly:
+
+```bash
+ruby test/test_config.rb
+ruby test/test_templates.rb
+ruby test/test_scss.rb
+ruby test/test_site_structure.rb
+```
+
+### Test Coverage
+
+The test suite covers:
+
+- **Configuration validation**: Ensures `_config.yml` has valid syntax and required fields
+- **Template syntax**: Validates all Liquid templates for proper tag matching
+- **SCSS compilation**: Checks that stylesheets have valid syntax
+- **Site structure**: Verifies required files and directories exist
+- **Content validation**: Tests that includes and layouts have expected structure
+
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
